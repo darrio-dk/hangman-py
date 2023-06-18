@@ -48,8 +48,8 @@ HANGMAN_PICTURES = ['''
 
 
 # User enters their name to start the game
-#name = input("Please enter your name: ")
-#print("Hi",name,"" "lets begin the game")
+name = input("Please enter your name: ")
+print("Hi",name,"" "lets begin the game")
 
 words = "dog cat eagle lion lizard cow bear donkey tiger bull llama beaver giraffe sheep deer horse rabbit monkey duck hippopotamus wolf camel kangaroo".split()
 
@@ -108,8 +108,54 @@ def repeatGame():
     and the game starts again, returns false if "no"
     option picked
     """
-    print("Would you like continue playing")
+    print("Would you like continue playing choose 'y' for yes or 'n' for no")
+    return input().lower().startswith('y')
 
 #print(Fore.RED + '|_H_A_N_G_M_A_N_|')
 
 print('|_H_A_N_G_M_A_N_|')
+missedLetters = ''
+correctLetters = ''
+secretWord = getRandomWord(words)
+gameIsOver = False
+
+#game
+while True:
+    displayBoard(missedLetters, correctLetters, secretWord)
+    # Gives the player option to enter the letter:
+    guess = getGuessWord(missedLetters + correctLetters)
+
+    if guess in secretWord:
+        correctLetters = correctLetters + guess
+        # Check to see if the player has won:
+        foundAllLetters = True
+        for i in range(len(secretWord)):
+            if secretWord[i] not in correctLetters:
+                foundAllLetters = False
+                break
+        if foundAllLetters:
+            print('You guessed it!')
+            print('The secret word is "' + secretWord + '"! You win!')
+            gameIsOver = True
+    else:
+        missedLetters = missedLetters + guess
+
+        # Check if the player has guessed too many times and lost.
+        if len(missedLetters) == len(HANGMAN_PICTURES) -1:
+            displayBoard(missedLetters, correctLetters, secretWord)
+            print('You have run out of guesses!\nAfter ' + str(len(missedLetters)) + ' missed guesses and ' + str(len(correctLetters)) + ' correct guesses, the word was "' + secretWord + '"')
+            gameIsOver = True
+
+    # If the game is over, ask the player to try again.
+    if gameIsOver:
+        if repeatGame():
+            missedLetters = ''
+            correctLetters = ''
+            gameIsOver = False
+            secretWord = getRandomWord(words)
+        else:
+            break
+            
+
+    
+
