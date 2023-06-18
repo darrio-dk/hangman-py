@@ -4,6 +4,11 @@
 
 import random
 
+#import colorama
+#from colorama import Fore, Back, Style
+#colorama.init(autoreset=True)
+
+
 HANGMAN_PICTURES = ['''
     +---+
          |
@@ -97,4 +102,14 @@ def getGuessWord(alreadyGuessed):
         else:
             return guess
         
+def repeatGame():
+    """
+    If the player chooses "yes" option returns True
+    and the game starts again, returns false if "no"
+    option picked
+    """
+    print("Would you like continue playing")
 
+#print(Fore.RED + '|_H_A_N_G_M_A_N_|')
+
+print('|_H_A_N_G_M_A_N_|')
