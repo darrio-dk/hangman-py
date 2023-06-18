@@ -41,10 +41,36 @@ HANGMAN_PICTURES = ['''
    / \  |
        ===''']
 
-print(HANGMAN_PICTURES)
-
 
 # User enters their name to start the game
-name = input("Please enter your name: ")
-print("Hi",name,"" "lets begin the game")
+#name = input("Please enter your name: ")
+#print("Hi",name,"" "lets begin the game")
+
+words = "dog cat eagle lion lizard cow bear donkey tiger bull llama beaver giraffe sheep deer horse rabbit monkey duck hippopotamus wolf camel kangaroo".split()
+
+def getRandomWord(wordList):
+    """
+    Generates a random word from the past list of strings.
+    """
+    wordIndex = random.randint(0, len(wordList) - 1)
+    return wordList[wordIndex]
+    
+def displayBoard(missedLetters, correctLetters, secretWord):
+    print()
+    print(HANGMAN_PICTURES[len(missedLetters)])
+
+    print()
+    print('Missed letters: ', end=' ')
+    for letter in missedLetters:
+        print(letter, end=' ')
+
+    print()
+    blanks = '_' * len(secretWord)
+    for i in range(len(secretWord)):
+        if secretWord[i] in correctLetters:
+            blanks = blanks[:i] + secretWord[i] + blanks[i+1:]
+    # Display the secret word with spaces between the letters:
+    for letter in blanks:
+        print(letter, end =' ')
+    print()
 
