@@ -32,26 +32,32 @@ HANGMAN_PICTURES = ['''
        ===''', '''
     +---+
     O   |
-   /|\  |
+   /|\\  |
         |
        ===''', '''
     +---+
     O   |
-   /|\  |
+   /|\\  |
    /    |
        ===''', '''
     +---+
     O   |
-   /|\  |
-   / \  |
+   /|\\  |
+   / \\  |
        ===''']
 
 
 # User enters their name to start the game
-name = input("Please enter your name: ")
-print("Hi", name, "" "lets begin the game")
+name = input("Welcome to Hangman game, please enter your name: ")
+print("Hi", name, "" "lets begin the animal guessing game")
+print("Rules are simple guess a letter each"
+      "time to find out what animal name is hiding")
+print("You will have 6 guesses in total, "
+      "lets have some fun in gueesing animal words - Let's go :)")
 
-words = "dog cat eagle lion lizard cow bear donkey tiger bull llama beaver giraffe sheep deer horse rabbit monkey duck hippopotamus wolf camel kangaroo".split()
+words = "dog cat eagle lion lizard cow bear donkey tiger bull llama beaver" \
+        "giraffe sheep deer horse rabbit monkey duck hippopotamus wolf camel" \
+        "kangaroo wolf fox lion flamingo bat gorilla".split()
 
 def getRandomWord(wordList):
     """
