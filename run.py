@@ -4,9 +4,9 @@
 
 import random
 
-#import colorama
-#from colorama import Fore, Back, Style
-#colorama.init(autoreset=True)
+# import colorama
+# from colorama import Fore, Back, Style
+# colorama.init(autoreset=True)
 
 
 HANGMAN_PICTURES = ['''
@@ -49,7 +49,7 @@ HANGMAN_PICTURES = ['''
 
 # User enters their name to start the game
 name = input("Please enter your name: ")
-print("Hi",name,"" "lets begin the game")
+print("Hi", name, "" "lets begin the game")
 
 words = "dog cat eagle lion lizard cow bear donkey tiger bull llama beaver giraffe sheep deer horse rabbit monkey duck hippopotamus wolf camel kangaroo".split()
 
@@ -96,7 +96,7 @@ def getGuessWord(alreadyGuessed):
         if len(guess) != 1:
             print("Only a single letter is allowed.")
         elif guess in alreadyGuessed:
-            print("You have already chosen that letter. Please choose different one.")
+            print("You have already chosen that letter. Choose different one.")
         elif guess not in 'abcdefghijklmnopqrstuvwxyz':
             print("Please choose a letter from the alphabet")
         else:
@@ -111,7 +111,7 @@ def repeatGame():
     print("Would you like continue playing choose 'y' for yes or 'n' for no")
     return input().lower().startswith('y')
 
-#print(Fore.RED + '|_H_A_N_G_M_A_N_|')
+# print(Fore.RED + '|_H_A_N_G_M_A_N_|')
 
 print('|_H_A_N_G_M_A_N_|')
 missedLetters = ''
@@ -119,7 +119,7 @@ correctLetters = ''
 secretWord = getRandomWord(words)
 gameIsOver = False
 
-#game
+# game
 while True:
     displayBoard(missedLetters, correctLetters, secretWord)
     # Gives the player option to enter the letter:
@@ -156,6 +156,3 @@ while True:
         else:
             break
             
-
-    
-
