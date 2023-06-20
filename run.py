@@ -4,9 +4,9 @@
 
 import random
 
-# import colorama
-# from colorama import Fore, Back, Style
-# colorama.init(autoreset=True)
+import colorama
+from colorama import Fore, Back, Style
+colorama.init(autoreset=True)
 
 
 HANGMAN_PICTURES = ['''
@@ -50,7 +50,7 @@ HANGMAN_PICTURES = ['''
 # User enters their name to start the game
 name = input("Welcome to Hangman game, please enter your name: ")
 print("Hi", name, "" "lets begin the animal guessing game")
-print("Rules are simple guess a letter each"
+print("Rules are simple guess a letter each "
       "time to find out what animal name is hiding")
 print("You will have 6 guesses in total, "
       "lets have some fun in gueesing animal words - Let's go :)")
@@ -117,10 +117,8 @@ def repeatGame():
     print("Would you like continue playing choose 'y' for yes or 'n' for no")
     return input().lower().startswith('y')
 
-# print(Fore.RED + '|_H_A_N_G_M_A_N_|')
 
-
-print('|_H_A_N_G_M_A_N_|')
+print(Fore.RED + '|_H_A_N_G_M_A_N_|')
 missedLetters = ''
 correctLetters = ''
 secretWord = getRandomWord(words)
