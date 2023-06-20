@@ -48,7 +48,7 @@ HANGMAN_PICTURES = ['''
 
 
 # User enters their name to start the game
-name = input("Welcome to Hangman game, please enter your name: ")
+name = input("Welcome to Hangman game, please enter your name:\n ")
 print("Hi", name, "" "lets begin the animal guessing game")
 print("Rules are simple guess a letter each "
       "time to find out what animal name is hiding")
