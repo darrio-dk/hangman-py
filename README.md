@@ -52,7 +52,10 @@ I have manually tested this project by using PEP8 linter
 
 ### Solved Bugs
 
-- When running test with PEP8 were getting bugs like E221, E225, E501, W391, E272.
+- When running test with PEP8 were getting bugs like E221, E225, E501, W391, E272, 53: E128.
+
+- Fixed bug using f-string for prin statement. Solved the space issues between the sentence.
+![Alt text](<Screenshot (293).png>)
 
 - All the bugs fixed by searcing what do the error code means on engine google.
 
@@ -88,3 +91,6 @@ Inspiration research tutorials (youtube):
 
 - [Link](https://www.youtube.com/watch?v=MtYw0RaZ4B0)
 - [Link](https://www.youtube.com/watch?v=pFvSb7cb_Us)
+
+## Live link 
+[Hangman](https://hangman-py3-5f2342eed49c.herokuapp.com/)
